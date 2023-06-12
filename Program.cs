@@ -4,7 +4,7 @@ builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
-app.MapGet("/", (ILogger logger) => {
+app.MapGet("/", (ILogger<Program> logger) => {
     logger.LogInformation("hello world has hit the endpoint!");
     return "Hello World";
 });
